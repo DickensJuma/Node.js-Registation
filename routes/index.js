@@ -5,11 +5,28 @@ var User      = mongoose.model('Users');
 var crypto    = require('crypto'), hmac, signature;
 const { check, validationResult } = require('express-validator/check');
 const { matchedData, sanitize }   = require('express-validator/filter');
+var express = require('express');
+var router = express.Router();
+ 
+//multer object creation
+var multer  = require('multer')
+var storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, 'public/uploads/')
+    },
+    filename: function (req, file, cb) {
+        cb(null, file.originalname)
+  }
+})
+ 
+var upload = multer({ storage: storage })
+
 
    /* GET home page. */
   router.get('/', function(req, res, next) {
       res.render('index', { title: 'Nodejs user registration'});
    })
+ 
    
   /* POST user registration page. */
   router.post('/register',[ 
@@ -45,8 +62,6 @@ const { matchedData, sanitize }   = require('express-validator/filter');
     check('dob','Date of birth cannot be left blank')
     .isLength({ min: 1 }),
     
-    check('doa','Date of appointment cannot be left blank')
-    .isLength({ min: 1 }),
 
     check('county','County cannot be left blank')
     .isLength({ min: 1 }),
@@ -110,6 +125,9 @@ function findUserByEmail(email){
       })
     }
  }
+ router.post('/', upload.single('imageupload'),function(req, res) {
+  res.send("File upload sucessfully.");
+});
 
 
 module.exports = router;

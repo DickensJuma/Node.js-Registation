@@ -12,15 +12,14 @@ $(function(){
         var doa        = $("#doa").val();
         var status     = $("#status").val();
         var loe        = $("#loe").val();
+        var institution= $("#institution").val();
         var photo      = $("#photo").val();
         var phone      = $("#phone").val();
         var country    = $("#country").val();
         var gender     = $('input[name="gender"]:checked').val(); 
-        var calorie    = $('input[name="calorie"]:checked').val(); 
-        var salt       = $('input[name="salt"]:checked').val();
         var terms      = $('input[name="terms"]:checked').val();
 
-        if(!fullname || !email || !password || !cpassword || !ID || !photo || !dob || !doa || !status || loe ||phone || !country || !gender){ 
+        if(!fullname || !email || !password || !cpassword || !ID || !dob || !status|| phone || !country || !gender){ 
             $("#msgDiv").show().html("All fields are required.");
         } else if(cpassword != password){
             $("#msgDiv").show().html("Passowrds should match.");
@@ -31,7 +30,7 @@ $(function(){
             $.ajax({
                 url: "/register",
                 method: "POST",
-                data: { full_name: fullname, email: email, password: password, cpassword: cpassword,ID: ID,photo: photo, dob: dob, doa: doa,loe: loe,status: status,phone: phone, country: country, gender: gender, calorie:calorie ,salt: salt, terms: terms }
+                data: { full_name: fullname, email: email, password: password, cpassword: cpassword,ID: ID,photo: photo, dob: dob, doa: doa,loe: loe, institution: institution, status: status,phone: phone, country: country, gender: gender,  terms: terms }
             }).done(function( data ) {
 
                 if ( data ) {

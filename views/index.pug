@@ -1,118 +1,164 @@
 extends layout
 
 block content
-   .container
-      
-      h2.text-center.top-buffer User Registration 
-      form.form-horizontal(role="form", method="post")
-        .form-group
-          .alert.alert-danger(role='alert', id="msgDiv")
+  .container
 
-        .form-group
-          label.col-sm-3.control-label(for="fullname") 
-           strong Full Name
-          .col-sm-9
-            input#fullname.form-control(type="text" placeholder="Full Name" autofocus="" value="")
-        .form-group
-          label.col-sm-3.control-label(for="email") 
-           strong Email
-          .col-sm-9
-            input#email.form-control(type="email" placeholder="Email")
-        .form-group
-          label.col-sm-3.control-label(for="password") 
-           strong Password
-          .col-sm-9
-            input#password.form-control(type="password" placeholder="Password")
-        .form-group
-          label.col-sm-3.control-label(for="cpassword") 
-           strong Confirm Password
-          .col-sm-9
-            input#cpassword.form-control(type="password" placeholder="Confirm password")
-        .form-group
-          label.col-sm-3.control-label(for="ID") 
-           strong ID Number
-          .col-sm-9
-            input#fullname.form-control(type="text" placeholder="ID No." autofocus="" value="")
-        .form-group
-          label.col-sm-9.control-label(for="dob") 
-           strong Date of Birth
-          .col-sm-9
-            input#dob.form-control(type="date")
-        .form-group
-          label.col-sm-9.control-label(for="doa") 
-           strong Date of Appointment
-          .col-sm-9
-            input#dob.form-control(type="date")
-        .form-group
-          label.col-sm-3.control-label(for="county") 
-           strong County
-          .col-sm-9
-            select#country.form-control
-              option(value='') Please Select
-              option Kisumu
-              option Taita Taveta	
-              option Migori
-              option Siaya
-              option Kisii
-              option Marsabit
-              option Kericho
-              option Nairobi
-              option Mombasa
-              option Kwale
-              option Moyale
-              option Others
-        .form-group
-          label.control-label.col-sm-3 
-           strong Gender
-          .col-sm-6
-            .row
-              .col-sm-6
-                label.radio-inline
-                  input#femaleRadio(name="gender" type="radio" value="Female")
-                  | &nbsp;Female
-              .col-sm-4
-                label.radio-inline
-                  input#maleRadio(name="gender" type="radio" value="Male")
-                  | &nbsp;Male              
-        .form-group
-          label.control-label.col-sm-9 
-           strong Marital Status
-          .col-sm-9
-            .checkbox
-              label
-                input#singleCheckbox(type="checkbox" value="Single" name="single")
-                | &nbsp;Single
-            .checkbox
-              label
-                input#marriedCheckbox(type="checkbox" value="Marrired"  name="married")
-                | &nbsp;Married
-                .checkbox
-              label
-                input#divorcedCheckbox(type="checkbox" value="Divorced"  name="divorced")
-                | &nbsp;Divorced
-        .form-group
-          label.col-sm-3.control-label(for="loa") 
-           strong Level of Education
-          .col-sm-9
-            select#country.form-control
-              option(value='') Please Select
-              option PHD
-              option Master	
-              option Degree
-              option Certificate
-              option Others   
-       .form-group
-          label.col-sm-3.control-label(for="phone") 
-           strong Phone Number
-          .col-sm-9
-            input#fullname.form-control(type="text" placeholder="phone No." autofocus="" value="")            
-        .form-group
-          .col-sm-9.col-sm-offset-3
-            .checkbox
-              label
-                input#terms(type="checkbox" value="yes" name="terms")
-                | &nbsp;I accept 
-                a(href="#") terms
-        .form-group
-          .col-sm-9.col-sm-offset-3
-            button#register.btn.btn-primary.btn-block(type="e") Register
+    h2.text-center.top-buffer User Registration 
+    form.form-horizontal(role="form", method="post")
+      .form-group
+        .alert.alert-danger(role='alert', id="msgDiv")
+
+      .form-group
+        label.col-sm-3.control-label(for="fullname") 
+          strong Full Name
+        .col-sm-9
+          input#fullname.form-control(type="text" placeholder="Full Name" autofocus="" value="")
+      .form-group
+        label.col-sm-3.control-label(for="email") 
+          strong Email
+        .col-sm-9
+          input#email.form-control(type="email" placeholder="Email")
+      .form-group
+        label.col-sm-3.control-label(for="password") 
+          strong Password
+        .col-sm-9
+          input#password.form-control(type="password" placeholder="Password")
+      .form-group
+        label.col-sm-3.control-label(for="cpassword") 
+          strong Confirm Password
+        .col-sm-9
+          input#cpassword.form-control(type="password" placeholder="Confirm password")
+      .form-group
+        label.col-sm-3.control-label(for="ID") 
+          strong ID Number
+        .col-sm-9
+          input#fullname.form-control(type="text" placeholder="ID No." autofocus="" value="")
+      .form-group
+        label.col-sm-9.control-label(for="dob") 
+          strong Date of Birth
+        .col-sm-9
+          input#dob.form-control(type="date")
+      .form-group
+        label.col-sm-9.control-label(for="doa") 
+          strong Date of Appointment
+        .col-sm-9
+          input#dob.form-control(type="date")
+      .form-group
+        label.col-sm-3.control-label(for="county") 
+          strong County
+        .col-sm-9
+          select#country.form-control
+            option(value='') Please Select
+            option Mombasa
+            option Kwale
+            option Kilifi 
+            option Tana 
+            option Lamu  
+            option Taita Taveta 
+            option Garissa	
+            option North Eastern 
+            option Wajir	 
+            option Mandera	
+            option Marsabit  
+            option Isiolo 
+            option Meru 
+            option Tharaka Nithi 
+            option Embu
+            option Kitui	
+            option Machakos 
+            option Makueni	
+            option Nyandarua 
+            option Kirinyaga	
+            option Murang'a	
+            option Kiambu	
+            option Turkana  
+            option West Pokot	
+            option Samburu	
+            option Uasin Gishu	
+            option Trans-Nzoia	
+            option Elgeyo-Marakwet
+            option Nandi	
+            option Baringo	
+            option Laikipia	
+            option Nakuru	
+            option Narok	
+            option Kajiado	
+            option Kericho	
+            option Bomet	
+            option Kakamega	
+            option Vihiga	
+            option Bungoma	
+            option Busia	
+            option Siaya	
+            option Kisumu	
+            option Homa Bay	
+            option Migori	
+            option Kisii	
+            option Nyamira	
+            option Nairobi	   
+      .form-group
+        label.control-label.col-sm-3 
+          strong Gender
+        .col-sm-6
+          .row
+            .col-sm-6
+              label.radio-inline
+                input#femaleRadio(name="gender" type="radio" value="Female")
+                | &nbsp;Female
+            .col-sm-4
+              label.radio-inline
+                input#maleRadio(name="gender" type="radio" value="Male")
+                | &nbsp;Male              
+      .form-group
+        label.control-label.col-sm-9 
+          strong Marital Status
+        .col-sm-9
+          .checkbox
+            label
+              input#singleCheckbox(type="checkbox" value="Single" name="single")
+              | &nbsp;Single
+          .checkbox
+            label
+              input#marriedCheckbox(type="checkbox" value="Marrired"  name="married")
+              | &nbsp;Married
+              .checkbox
+            label
+              input#divorcedCheckbox(type="checkbox" value="Divorced"  name="divorced")
+              | &nbsp;Divorced
+      .form-group
+        label.col-sm-3.control-label(for="loa") 
+          strong Level of Education
+        .col-sm-9
+          select#country.form-control
+            option(value='') Please Select
+            option PHD
+            option Master	
+            option Degree
+            option Diploma
+            option Certificate
+            option Others
+      .form-group
+        label.col-sm-3.control-label(for="fullname") 
+          strong Institution
+        .col-sm-9
+          input#fullname.form-control(type="text" placeholder="Institution" autofocus="" value="")         
+      .form-group
+        label.col-sm-3.control-label(for="phone") 
+          strong Phone Number
+        .col-sm-9
+          input#fullname.form-control(type="text" placeholder="phone No." autofocus="" value="") 
+
+      block content
+      form(method='post', enctype='multipart/form-data') 
+        input(type='file', name='imageupload') 
+        input(type='submit', name='uploadimage', value='Upload Image')        
+      .form-group
+        .col-sm-9.col-sm-offset-3
+          .checkbox
+            label
+              input#terms(type="checkbox" value="yes" name="terms")
+              | &nbsp;I accept 
+              a(href="#") terms
+      .form-group
+        .col-sm-9.col-sm-offset-3
+          button#register.btn.btn-primary.btn-block(type="e") Register
