@@ -13,7 +13,6 @@ $(function(){
         var status     = $("#status").val();
         var loe        = $("#loe").val();
         var institution= $("#institution").val();
-        var photo      = $("#photo").val();
         var phone      = $("#phone").val();
         var country    = $("#country").val();
         var gender     = $('input[name="gender"]:checked').val(); 
@@ -30,7 +29,7 @@ $(function(){
             $.ajax({
                 url: "/register",
                 method: "POST",
-                data: { full_name: fullname, email: email, password: password, cpassword: cpassword,ID: ID,photo: photo, dob: dob, doa: doa,loe: loe, institution: institution, status: status,phone: phone, country: country, gender: gender,  terms: terms }
+                data: { full_name: fullname, email: email, password: password, cpassword: cpassword,ID: ID, dob: dob, doa: doa,loe: loe, npinstitution: institution, status: status,phone: phone, country: country, gender: gender,  terms: terms }
             }).done(function( data ) {
 
                 if ( data ) {
